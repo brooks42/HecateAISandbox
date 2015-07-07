@@ -30,7 +30,7 @@ public interface Serial {
      *
      * @param obj
      */
-    public void write(Object obj);
+    public abstract void write(Object obj);
 
     /**
      * Gets the next piece of data for this device, if available. It's
@@ -41,5 +41,5 @@ public interface Serial {
      *
      * @return the next object in this object's info queue, or null
      */
-    public Object read();
+    public abstract Object read();
 }
