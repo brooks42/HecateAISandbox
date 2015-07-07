@@ -1,10 +1,10 @@
 package agents;
 
-import actuators.Actuator;
+import device.actuators.Actuator;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sensors.SensorData;
+import device.sensors.SensorData;
 
 /**
  * The RationalAgent class represents a base class for agents that adhere to the

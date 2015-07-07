@@ -1,4 +1,4 @@
-package sensors;
+package device.sensors;
 
 import java.util.HashMap;
 

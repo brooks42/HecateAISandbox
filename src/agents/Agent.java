@@ -1,8 +1,8 @@
 package agents;
 
-import actuators.Actuator;
+import device.actuators.Actuator;
 import java.util.HashMap;
-import sensors.SensorData;
+import device.sensors.SensorData;
 
 /**
  * The Agent base class represents a single, autonomous "unit". In game terms,

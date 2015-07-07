@@ -1,4 +1,4 @@
-package sensors;
+package device.sensors;
 
 /**
  * The Pollable interface gives PollableSensors (like accelerometers) a method
@@ -6,7 +6,7 @@ package sensors;
  *
  * @author Chris
  */
-public interface Pollable {
+public interface PollableSensor extends Sensor {
 
     /**
      * @return an Object that represents a piece of data coming from the sensor,
@@ -15,5 +15,5 @@ public interface Pollable {
      * said to the robot a week ago. Literally anything you want your class to
      * return.
      */
-    public Object poll();
+    public abstract Object poll();
 }

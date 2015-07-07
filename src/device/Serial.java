@@ -1,4 +1,4 @@
-package sensors;
+package device;
 
 /**
  * The Serial interface provides methods for an implementing device that is
