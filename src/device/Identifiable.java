@@ -13,16 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package device.sensors;
-
-import device.Device;
+package device;
 
 /**
- * The Sensor object represents a physical sensor device, such as an
- * accelerometer or a GPS.
+ * The Identifiable interface is used to 
  *
  * @author Chris
  */
-public interface Sensor extends Device {
-
+public interface Identifiable {
+    
+    /**
+     * Returns the name of this Identifiable.
+     * 
+     * @return 
+     */
+    public abstract String getName();
 }

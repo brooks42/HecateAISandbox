@@ -15,12 +15,12 @@
  */
 package device.actuators;
 
-import device.DeviceProperties;
+import device.Device;
 
 /**
  *
  * @author Chris
  */
-public interface Actuator extends DeviceProperties {
+public interface Actuator extends Device {
 
 }
