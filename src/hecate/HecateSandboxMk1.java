@@ -1,4 +1,4 @@
-package aisandboxmk1;
+package hecate;
 
 import fakenetworking.FakePacket;
 import fakenetworking.FakeTCP;
@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author Chris
  */
-public class AISandboxMk1 {
+public class HecateSandboxMk1 {
 
     private static final int UDP_TEST_NUM = 300;
     private static final int TCP_TEST_NUM = 100;
@@ -24,7 +24,7 @@ public class AISandboxMk1 {
     public static void main(String[] args) {
         // test the networking stuff here
 
-        AISandboxMk1 mk1 = new AISandboxMk1();
+        HecateSandboxMk1 mk1 = new HecateSandboxMk1();
         mk1.runPacketTest();
         while (!mk1.canDie) {
             // wait
