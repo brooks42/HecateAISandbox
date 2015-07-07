@@ -15,6 +15,7 @@
  */
 package device.sensors;
 
+import device.Propertied;
 import java.util.HashMap;
 
 /**
@@ -29,12 +30,7 @@ import java.util.HashMap;
  *
  * @author Chris
  */
-public class SensorData {
-
-    // the sensor this data came from
-    protected final Sensor parent;
-    // this SensorData's actual data objects
-    protected final HashMap<String, Object> data;
+public class MutableSensorData extends SensorData implements Propertied {
 
     /**
      * Creates a new SensorData object
@@ -42,27 +38,15 @@ public class SensorData {
      * @param parent
      * @param data
      */
-    public SensorData(Sensor parent, HashMap<String, Object> data) {
-        this.parent = parent;
-        this.data = data;
+    public MutableSensorData(Sensor parent, HashMap<String, Object> data) {
+        super(parent, data);
     }
 
     /**
-     * @param key the piece of data to get. Cannot be null.
-     * @return a piece of data with the passed key, if any. Can return null if
-     * the key is unavailable.
+     * @return all of the properties for this MutableSensorData object.
      */
-    public Object getProperty(String key) {
-        if (key == null) {
-            throw new IllegalArgumentException("Data key cannot be null");
-        }
-        return this.data.get(key);
-    }
-
-    /**
-     * @return the sensor that retrieved this SensorData
-     */
-    public Sensor getParent() {
-        return parent;
+    @Override
+    public HashMap<String, Object> getProperties() {
+        return data;
     }
 }

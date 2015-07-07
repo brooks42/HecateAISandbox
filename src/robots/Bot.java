@@ -28,14 +28,14 @@ import world2D.WorldEntity;
  *
  * @author Chris
  */
-public class Bot extends WorldEntity implements Updateable {
+public abstract class Bot extends WorldEntity implements Updateable {
 
     // a map of sensors by name
     protected HashMap<String, Sensor> sensors;
-    
+
     // a list of actuators by name
     protected HashMap<String, Actuator> actuators;
-    
+
     // a list of other, miscellaneous devices by name
     protected HashMap<String, Device> devices;
 
@@ -88,10 +88,22 @@ public class Bot extends WorldEntity implements Updateable {
     /**
      * Updates this Bot to take actions.
      *
+     * For most usecases, you'll simply override the Bot's other methods called
+     * during the update, such as pollSensors().
+     *
+     * It's highly recommended that if you override this method, you then call
+     * this method as the first line of your override.
+     *
      * @param dt
      */
     @Override
     public void update(long dt) {
-
+        pollSensors();
     }
+
+    /**
+     * Polls the sensors for this Bot. This occurs once per update by default.
+     */
+    public abstract void pollSensors();
+    
 }

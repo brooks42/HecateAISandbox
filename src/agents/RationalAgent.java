@@ -100,4 +100,9 @@ public class RationalAgent extends Agent {
     public void considerSensorData(SensorData data) {
         Logger.getLogger(this.properties.get(PROP_AGENT_NAME).toString()).log(Level.INFO, "read from sensor: {0}", data.toString());
     }
+
+    @Override
+    public HashMap<String, Object> getProperties() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

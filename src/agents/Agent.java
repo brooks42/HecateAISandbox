@@ -15,6 +15,7 @@
  */
 package agents;
 
+import device.Propertied;
 import device.actuators.Actuator;
 import java.util.HashMap;
 import device.sensors.SensorData;
@@ -29,7 +30,7 @@ import device.sensors.SensorData;
  *
  * @author Chris
  */
-public abstract class Agent {
+public abstract class Agent implements Propertied {
 
     // for convenient subclassing...
     public Agent() {

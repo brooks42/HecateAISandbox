@@ -15,20 +15,20 @@
  */
 package device;
 
-import robots.Bot;
+import java.util.HashMap;
 
 /**
+ * The Propertied interface provides a simple way to get a HashMap of
+ * <String, Object> pairs.
+ *
+ * Lots of stuff in this API is Propertied, from Devices to SensorData to Bots.
  *
  * @author Chris
  */
-public interface Device extends Identifiable, Propertied {
+public interface Propertied {
 
     /**
-     * Devices have to have parent bots, which is the robot the device is
-     * attached to.
-     *
-     * @param bot the parent bot. If the device is something like an actuator,
-     * this is the bot the actuator will affect/interact with.
+     * @return this object's properties dictionary
      */
-    public abstract void setParentBot(Bot bot);
+    public abstract HashMap<String, Object> getProperties();
 }
