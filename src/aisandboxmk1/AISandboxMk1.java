@@ -1,11 +1,11 @@
 package aisandboxmk1;
 
-import com.sun.istack.internal.logging.Logger;
 import fakenetworking.FakePacket;
 import fakenetworking.FakeTCP;
 import fakenetworking.FakeUDP;
 import fakenetworking.PacketTarget;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,9 +29,9 @@ public class AISandboxMk1 {
         while (!mk1.canDie) {
             // wait
         }
-        Logger.getLogger(AISandboxMk1.class).log(Level.INFO, "Successful UDP packets: ({0} / {1})", new Object[]{mk1.successfulUDPPackets, UDP_TEST_NUM});
-        Logger.getLogger(AISandboxMk1.class).log(Level.INFO, "Successful TCP packets: ({0} / {1})", new Object[]{mk1.successfulTCPPackets, TCP_TEST_NUM});
-        Logger.getLogger(AISandboxMk1.class).log(Level.INFO, "This concludes our test.");
+        Logger.getGlobal().log(Level.INFO, "Successful UDP packets: ({0} / {1})", new Object[]{mk1.successfulUDPPackets, UDP_TEST_NUM});
+        Logger.getGlobal().log(Level.INFO, "Successful TCP packets: ({0} / {1})", new Object[]{mk1.successfulTCPPackets, TCP_TEST_NUM});
+        Logger.getGlobal().log(Level.INFO, "This concludes our test.");
     }
 
     int successfulUDPPackets = 0;
@@ -59,7 +59,7 @@ public class AISandboxMk1 {
                 if (successfulTCPPackets == TCP_TEST_NUM) {
                     canDie = true;
                 }
-                Logger.getLogger(AISandboxMk1.class).log(Level.INFO, "Successful TCP packets: ({0} / {1})", new Object[]{successfulTCPPackets, TCP_TEST_NUM});
+                Logger.getGlobal().log(Level.INFO, "Successful TCP packets: ({0} / {1})", new Object[]{successfulTCPPackets, TCP_TEST_NUM});
             }
         };
         target = new TestPacketTarget(ex);
@@ -87,7 +87,7 @@ public class AISandboxMk1 {
 
         @Override
         public void receivePacket(FakePacket packet) {
-            Logger.getLogger(AISandboxMk1.class).log(Level.INFO, "Received packet message: " + packet.getMessage());
+            Logger.getGlobal().log(Level.INFO, "Received packet message: {0}", packet.getMessage());
             ex.execute();
         }
     }
